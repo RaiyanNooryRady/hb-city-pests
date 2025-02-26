@@ -5,12 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sitemap</title>
+    <style>
+        /* Default for desktop - 5 columns */
+        .hb-city-pest-list-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            /* 5 columns on desktop */
+            gap: 15px;
+            /* Space between list items */
+        }
+
+        /* Tablet view - 3 columns */
+        @media (max-width: 1024px) {
+            .hb-city-pest-list-container {
+                grid-template-columns: repeat(3, 1fr);
+                /* 3 columns on tablet */
+            }
+        }
+
+        /* Mobile view - 2 columns */
+        @media (max-width: 600px) {
+            .hb-city-pest-list-container {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 columns on mobile */
+            }
+        }
+
+        /* Style the list to be inside the grid layout */
+        #hb-city-pest-list {
+            display: contents;
+            /* Makes the <ul> act like a container for the grid */
+            padding: 0;
+            margin: 0;
+        }
+
+        ul#hb-city-pest-list li {
+            list-style-type: none;
+            font-size: 15px;
+            color: #393939;
+            font-weight: 400;
+            letter-spacing: 1px;
+            word-spacing: 4px;
+            line-height: 38px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- List to display all cities and pests -->
-    <ul id="pest-list"></ul>
+    <div class="hb-city-pest-list-container">
+        <ul id="hb-city-pest-list"></ul>
+    </div>
+
 
     <script>
         const hbLocation = {
@@ -276,7 +324,7 @@
 
         const hbPest = ['Ameisen', 'Kakerlaken', 'Motten', 'Bettwanzen', 'Kleidermotten', 'Papierfischchen', 'Tauben', 'Brotkäfer', 'Marder', 'Ratten', 'Fliegen', 'Mäuse', 'Schaben', 'Wespen', 'Flöhe', 'Milben', 'Silberfische', 'Speckkäfer'];
 
-        const pestListContainer = document.getElementById('pest-list');
+        const pestListContainer = document.getElementById('hb-city-pest-list');
 
         // Generate list items for each city and pest
         for (let postalCode in hbLocation) {
