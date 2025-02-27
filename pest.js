@@ -22,5 +22,5 @@ if (postalCode && city) {
     document.getElementById('hb-content-city-postal').textContent = `In Kammerjäger in ${postalCode} ${city} gegen ${pest}`;
 } else {
     // Handle the case where postalCode or city are not provided in the URL (optional)
-    console.log('City or Postal code missing in the URL.');
+    document.getElementById('hansbasel-content-container').style.display='none';
 }
