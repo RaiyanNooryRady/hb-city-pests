@@ -17,9 +17,9 @@ const pest = getPestFromPath(); // Extract pest name from the URL path
 
 // If city and postal code exist in the URL, update the content of the <h2> elements
 if (postalCode && city) {
-    document.getElementById('hb-process-city-postal').textContent = `In ${postalCode}, ${city}`;
-    document.getElementById('hb-city-postal').textContent = `In ${postalCode}, ${city}`;
-    document.getElementById('hb-content-city-postal').textContent = `In Kammerjäger in ${postalCode} ${city} gegen ${pest}`;
+    document.getElementById('hb-process-city-postal').textContent = `in ${postalCode}, ${city}`;
+    document.getElementById('hb-city-postal').textContent = `in ${postalCode}, ${city}`;
+    document.getElementById('hb-content-city-postal').textContent = `Ihr Kammerjäger in ${postalCode} ${city} gegen ${pest}`;
 } else {
     // Handle the case where postalCode or city are not provided in the URL (optional)
     document.getElementById('hansbasel-content-container').style.display='none';
